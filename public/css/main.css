@@ -1,0 +1,226 @@
+.fa-stack[data-count]:after {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    content: attr(data-count);
+    font-size: 40%;
+    padding: .6em;
+    border-radius: 999px;
+    line-height: .75em;
+    color: #FF00F3;
+    text-align: center;
+    min-width: 2em;
+    font-weight: bold;
+    background: white;
+    border-style: solid;
+}
+
+/*THEME CUSTOMIZATION*/
+.text-theme {
+    color: #FF00F3;
+}
+
+.text-theme-alt {
+    color: #4200AB;
+}
+
+.bg-theme {
+    background-image: linear-gradient(to right bottom, #4200AB, #FF00F3);
+}
+
+.bg-theme-alt {
+    background-image: linear-gradient(to left top, #4200AB, #FF00F3);
+}
+
+.btn-theme {
+    color: #fff;
+    background-image: linear-gradient(to right bottom, #4200AB, #FF00F3);
+    border-color: #2b0071;
+}
+
+.btn-theme:hover {
+    color: #fff;
+    background-image: linear-gradient(to right bottom, #3a0095, #da00d0);
+    border-color: #18003d;
+}
+
+.btn-theme.focus, .btn-theme:focus {
+    box-shadow: 0 0 0 .2rem rgba(24, 0, 61, 0.73);
+}
+
+.btn-theme.disabled, .btn-theme:disabled {
+    color: #fff;
+    background-image: linear-gradient(to right bottom, #3a0095, #c300ba);
+    border-color: #18003d;
+}
+
+.btn-theme-alt {
+    color: #fff;
+    background-image: linear-gradient(to left top, #4200AB, #FF00F3);
+    border-color: #2b0071;
+}
+
+.btn-theme-alt:hover {
+    color: #fff;
+    background-image: linear-gradient(to left top, #3a0095, #c300ba);
+    border-color: #18003d;
+}
+
+.btn-theme-alt.focus, .btn-theme-alt:focus {
+    box-shadow: 0 0 0 .2rem rgba(24, 0, 61, 0.73);
+}
+
+.btn-theme-alt.disabled, .btn-theme-alt:disabled {
+    color: #fff;
+    background-image: linear-gradient(to left top, #3a0095, #c300ba);
+    border-color: #18003d;
+}
+
+.btn-theme-plain {
+    color: #fff;
+    background: #FF00F3;
+    border-color: #5b0057;
+}
+
+.btn-theme-plain:hover {
+    color: #fff;
+    background: #cb00c1;
+    border-color: #330031;
+}
+
+.btn-theme-plain-alt {
+    color: #fff;
+    background: #4200AB;
+    border-color: #200052;
+}
+
+.btn-theme-plain-alt:hover {
+    color: #fff;
+    background: #3a0095;
+    border-color: #130030;
+}
+
+.btn-theme-plain-alt.focus, .btn-theme-plain-alt:focus {
+    box-shadow: 0 0 0 .2rem rgba(24, 0, 61, 0.73);
+}
+
+/*UTILITIES*/
+.border-top-left-radius-0,
+.border-top-radius-0 {
+    border-top-left-radius: 0;
+}
+
+.border-top-right-radius-0,
+.border-top-radius-0 {
+    border-top-right-radius: 0;
+}
+
+.border-bottom-left-radius-0,
+.border-bottom-radius-0 {
+    border-bottom-left-radius: 0;
+}
+
+.border-bottom-right-radius-0,
+.border-bottom-radius-0 {
+    border-bottom-right-radius: 0;
+}
+
+/*HOME BANNER*/
+.homeBanner {
+    background: url("../img/home.png") no-repeat center fixed;
+    background-size: cover;
+}
+
+.banner-body {
+    background: rgba(10, 10, 10, 0.5);
+    text-shadow: 0 0 2px #fff;
+}
+
+.pad-me {
+    padding: 5em 0;
+}
+
+.img-left {
+    min-height: 420px;
+    background: url('../img/home.png') no-repeat center;
+    background-size: auto 100%;
+}
+
+.homeBanner .banner-wrap {
+    display: block;
+}
+
+.homeBanner .banner-wrap h1 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.2em;
+}
+
+.homeBanner .banner-wrap p {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.homeBanner .banner-wrap a {
+    color: #fff;
+    background-color: #5699EA;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+}
+
+.homeBanner .banner-wrap a:hover {
+    color: #5699EA;
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    .homeBanner .banner-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .homeBanner .banner-wrap > div {
+        margin-top: -75px;
+    }
+
+    .homeBanner .banner-wrap h1 {
+        font-size: 3em;
+        line-height: 1.5em;
+    }
+
+    .homeBanner .banner-wrap p {
+        font-size: 2em;
+        letter-spacing: 2px;
+        margin-bottom: 50px;
+    }
+}
+
+.homeBanner .info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.no-animation-hover:hover,
+.no-animation-hover:hover > .animated
+{
+    animation: step-end !important;
+}
+
+/*HOUSE CARD*/
+.house-card .card-body {
+    background-size: cover !important;
+    height: 220px;
+}

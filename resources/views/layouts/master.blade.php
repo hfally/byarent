@@ -11,23 +11,51 @@
 
     <title>{{ config('app.name') }} | @yield('title')</title>
 
+    <!-- LOADER -->
+    <link href="{{ asset('css/loader.css') }}" rel="stylesheet">
+
     <!-- Bootstrap Css -->
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('bootstrap/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Plugin Css -->
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet">
+
+    <!-- Custom Css -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     {{--Favicon--}}
-    <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/jpg">
+    <link href="{{ asset('img/icon.png') }}" rel="icon" type="image/png">
 
     @yield('extras')
 </head>
 <body @yield('bodyAttr')>
 
+<div id="preloader">
+    <div class="container">
+        <div class="row">
+            <div id="loader">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="lading"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @yield('content')
 
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/loader.js') }}"></script>
+<script src="{{ asset('bootstrap/popper.min.js') }}"></script>
+<script src="{{ asset('bootstrap/bootstrap.min.js') }}"></script>
 
 <script>
     $.ajaxSetup({
