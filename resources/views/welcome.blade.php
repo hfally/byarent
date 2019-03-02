@@ -61,6 +61,7 @@
 
         <section id="houses" class="my-5">
             <div class="container">
+                <hr/>
                 <h2>
                     Latest Houses
                 </h2>
@@ -305,5 +306,29 @@
                 </div>
             </div>
         </section>
+
+        <section id="agents" class="my-5">
+            <div class="container">
+                <hr/>
+                <h2>
+                    About
+                </h2>
+                <hr/>
+
+                <p class="lead">
+                    Byarent plays a dynamic, diversified and growing role in the
+                    Nigerian real estate market. We provide our clients with customized solutions to their real estate
+                    needs.
+                </p>
+
+                <p class="lead">
+                    We use creative, flexible and cost saving approach to housing development and delivery. Our team
+                    draws on an in-depth understanding of the real estate sector, gained through years of practical
+                    involvement and experience in the industry.
+                </p>
+            </div>
+        </section>
     </main>
+
+    @component('components.footer')@endcomponent
 @endsection

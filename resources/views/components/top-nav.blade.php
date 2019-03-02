@@ -45,6 +45,17 @@
                         <span class="d-lg-none">Cart</span>
                     </a>
                 </li>
+
+                <li class="nav-item  mr-3">
+                    <div class="nav-link">
+                        <a class=" {{ active('about') ? 'current-link' : '' }} text-muted"
+                           href="{{ route('support') }}">Register</a>
+                        |
+                        <a class="{{ active('support') ? 'current-link' : '' }} text-muted"
+                           href="{{ route('support') }}">Login</a>
+                    </div>
+                </li>
+
             </ul>
         </div>
     </div>
