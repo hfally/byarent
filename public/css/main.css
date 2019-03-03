@@ -129,6 +129,17 @@ html {
     border-bottom-right-radius: 0;
 }
 
+.no-underline,
+.no-underline a,
+.no-underline:hover,
+.no-underline a:hover {
+    text-decoration: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
 /*HOME BANNER*/
 .homeBanner {
     background: url("../img/home.png") no-repeat center fixed;

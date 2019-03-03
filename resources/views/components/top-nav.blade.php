@@ -34,7 +34,6 @@
                        href="{{ route('support') }}">Support</a>
                 </li>
 
-
                 <li class="nav-item">
                     <a class="nav-link text-dark {{ active('checkout') ? 'current-link' : '' }}"
                        href="{{ route('checkout') }}">
@@ -46,14 +45,34 @@
                     </a>
                 </li>
 
-                <li class="nav-item  mr-3">
-                    <div class="nav-link">
-                        <a class=" {{ active('register') ? 'current-link' : '' }} text-muted"
-                           href="{{ route('register') }}">Register</a>
-                        |
-                        <a class="{{ active('login') ? 'current-link' : '' }} text-muted"
-                           href="{{ route('login') }}">Login</a>
-                    </div>
+                <li class="nav-item mr-3 no-underline">
+                    @if(auth()->check())
+                        <div class="dropdown nav-link">
+                            <a href="#" class="text-muted no-un" id="menu" data-toggle="dropdown" aria-haspopup="true"
+                               aria-expanded="false">
+                                <i class="fa fa-user"></i>
+                                {{ auth()->user()->name }}
+                            </a>
+                            <form method="post" action="{{ route('logout') }}" class="dropdown-menu"
+                                  aria-labelledby="menu">
+
+                                @csrf
+
+                                <button type="submit" class="dropdown-item pointer" role="button">
+                                    <i class="fa fa-power-off text-danger"></i>
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    @else
+                        <div class="nav-link">
+                            <a class=" {{ active('register') ? 'current-link' : '' }} text-muted"
+                               href="{{ route('register') }}">Register</a>
+                            |
+                            <a class="{{ active('login') ? 'current-link' : '' }} text-muted"
+                               href="{{ route('login') }}">Login</a>
+                        </div>
+                    @endif
                 </li>
 
             </ul>

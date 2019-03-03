@@ -1,13 +1,5 @@
 @extends('layouts.master')
 
-@push('page-style')
-    <style>
-        .no-underline:hover {
-            text-decoration: none;
-        }
-    </style>
-@endpush
-
 @section('content')
     <main style="height: 100vh" class="d-flex justify-content-center align-items-center bg-theme-alt">
         <div class="container justify-content-center d-flex">
