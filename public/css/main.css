@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .fa-stack[data-count]:after {
     position: absolute;
     right: 0%;

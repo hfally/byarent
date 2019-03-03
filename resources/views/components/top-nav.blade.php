@@ -48,11 +48,11 @@
 
                 <li class="nav-item  mr-3">
                     <div class="nav-link">
-                        <a class=" {{ active('about') ? 'current-link' : '' }} text-muted"
-                           href="{{ route('support') }}">Register</a>
+                        <a class=" {{ active('register') ? 'current-link' : '' }} text-muted"
+                           href="{{ route('register') }}">Register</a>
                         |
-                        <a class="{{ active('support') ? 'current-link' : '' }} text-muted"
-                           href="{{ route('support') }}">Login</a>
+                        <a class="{{ active('login') ? 'current-link' : '' }} text-muted"
+                           href="{{ route('login') }}">Login</a>
                     </div>
                 </li>
 

@@ -27,7 +27,7 @@
     {{--Favicon--}}
     <link href="{{ asset('img/icon.png') }}" rel="icon" type="image/png">
 
-    @yield('extras')
+    @stack('page-style')
 </head>
 <body @yield('bodyAttr')>
 
@@ -66,5 +66,7 @@
 </script>
 
 <script src="{{ asset('js/main.js') }}"></script>
+
+@stack('page-script')
 </body>
 </html>

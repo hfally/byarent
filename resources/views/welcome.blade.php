@@ -21,7 +21,7 @@
                         <br/>
                         <br/>
                         <p>
-                            <a data-content="get-started" class="btn btn-theme scroll-wrap">
+                            <a href="{{ route('houses') }}" class="btn btn-theme scroll-wrap">
                                 Get Started
                             </a>
                         </p>
@@ -31,7 +31,7 @@
                 <tr>
                     <td height="10">
                         <h1 class="text-center py-3">
-                            <a href="#" role="button"
+                            <a href="#houses" role="button"
                                class="d-inline-block text-center bounce no-animation-hover infinite animated text-white"
                                data-content="get-started">
                                 <i class="fa fa-angle-down"></i>
