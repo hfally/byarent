@@ -1,44 +1,254 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#5699EA">
+@extends('layouts.master')
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('title', 'Welcome')
 
-    <title>{{ config('app.name') }} | @yield('title')</title>
+@section('content')
+    @component('components.top-nav')@endcomponent
 
-    <!-- Bootstrap Css -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/owl.theme.default.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <main style="margin-top: 150px">
+        <section id="houses" class="my-5">
+            <div class="container">
+                <hr/>
+                <h2>
+                    All Houses
+                </h2>
+                <hr/>
 
-    {{--Favicon--}}
-    <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/jpg">
+                <div class="row">
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/one.jpg') }})"></div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 500,000,000
+                            </div>
 
-    <script>
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN' : $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    </script>
-    <!-- Scripts -->
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ikeja, Lagos.
+                                </address>
 
-    @yield('extras')
-</head>
-<body @yield('bodyAttr')>
-@yield('content')
-</body>
-</html>
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Duplex
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 hour ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/two.jpg') }})"></div>
+
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 630,000,000
+                            </div>
+
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ikeja GRA, Lagos.
+                                </address>
+
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Bungalow
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 month ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/item3.jpg') }})"></div>
+
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 450,000,000
+                            </div>
+
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ogudu, Lagos.
+                                </address>
+
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Bungalow
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 month ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/item1.jpg') }})"></div>
+
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 500,000,000
+                            </div>
+
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ikeja, Lagos.
+                                </address>
+
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Duplex
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 hour ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/item2.jpg') }})"></div>
+
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 630,000,000
+                            </div>
+
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ikeja GRA, Lagos.
+                                </address>
+
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Bungalow
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 month ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 my-3">
+                        <div class="card house-card shadow">
+                            <div class="card-body" style="background: url({{ asset('img/houses/item4.jpg') }})"></div>
+
+                            <div class="card-footer text-center font-weight-bold bg-theme text-white font-italic lead">
+                                &#8358; 450,000,000
+                            </div>
+
+                            <div class="card-footer">
+                                <address class="text-center">
+                                    <i class="fa fa-map-pin text-danger"></i>
+                                    Ogudu, Lagos.
+                                </address>
+
+                                <p class="text-center lead">
+                                    43ft/23ft | 5br Bungalow
+                                </p>
+
+                                <small class="text-muted form-text text-center">
+                                    <i class="fa fa-clock"></i>
+                                    Posted 1 month ago
+                                </small>
+                            </div>
+
+                            <div class="btn-group justify-content-between" role="group" aria-label="Basic example">
+                                <button type="button" class="btn w-100 btn-dark border-top-left-radius-0">
+                                    <i class="fa fa-cart-plus"></i>
+                                    Add to cart
+                                </button>
+
+                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                    <i class="fa fa-eye"></i>
+                                    View details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-4 text-right">
+                    {!! $houses->links() !!}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    @component('components.footer')@endcomponent
+@endsection

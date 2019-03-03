@@ -224,3 +224,25 @@
     background-size: cover !important;
     height: 220px;
 }
+
+/*SLIDER*/
+.gallery-item {
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat !important;
+    background-size: auto 100% !important;
+    background-position: center !important;
+    background-color: #9b9b9b !important;
+    cursor: pointer;
+}
+
+/*PROPERTY*/
+.property-section {
+    border-right: 5px solid #4200AB !important;
+}
+
+@media screen and (min-width: 768px) {
+    .border-right-dotted {
+        border-right: 4px dotted rgba(1,1,1,.4);
+    }
+}

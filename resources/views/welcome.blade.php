@@ -98,10 +98,10 @@
                                     Add to cart
                                 </button>
 
-                                <button type="button" class="btn w-100 btn-secondary border-top-right-radius-0">
+                                <a href="{{ route('house.show', 1) }}" class="btn w-100 btn-secondary border-top-right-radius-0">
                                     <i class="fa fa-eye"></i>
                                     View details
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

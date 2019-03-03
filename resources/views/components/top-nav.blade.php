@@ -36,8 +36,8 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link text-dark {{ active('support') ? 'current-link' : '' }}"
-                       href="{{ route('support') }}">
+                    <a class="nav-link text-dark {{ active('checkout') ? 'current-link' : '' }}"
+                       href="{{ route('checkout') }}">
                         <span class="fa-stack fa-1x has-badge" data-count="0">
                           <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
                           <i style="" class="fa fa-shopping-cart fa-stack-2x"></i>

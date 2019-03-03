@@ -21,3 +21,9 @@ Auth::routes();
 
 Route::get('houses', 'HouseController@index')
     ->name('houses');
+
+Route::get('house/view/{pid}', 'HouseController@show')
+    ->name('house.show');
+
+Route::get('checkout', 'OrderController@index')
+    ->name('checkout');
