@@ -6,7 +6,9 @@
                     @csrf
                 </form>
 
-                You are about to delete a house. Do you wish to proceed with this action?
+                You are about to delete a house.
+                <br/>
+                Do you wish to proceed with this action?
             </div>
             <div class="modal-footer text-right">
                 <button class="btn btn-dark btn-sm" data-dismiss="modal">No, cancel</button>

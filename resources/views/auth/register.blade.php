@@ -74,9 +74,9 @@
                                 </div>
 
                                 @if ($errors->has('phone'))
-                                    <span class="invalid-feedback" role="alert">
+                                    <small class="text-danger form-text" role="alert">
                                         <strong>{{ $errors->first('phone') }}</strong>
-                                    </span>
+                                    </small>
                                 @endif
                             </div>
 
@@ -100,9 +100,9 @@
                                 </div>
 
                                 @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
+                                    <small class="form-text text-danger     " role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </small>
                                 @endif
                             </div>
 

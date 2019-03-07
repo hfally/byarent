@@ -16,6 +16,11 @@ class Order extends Model
         return $this->belongsToMany(House::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function getNumberAttribute()
     {
         return 'BR/OR/' . Carbon::parse($this->creted_at)->format('Y') . '/' . $this->id;

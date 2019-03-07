@@ -3,7 +3,7 @@
 @section('title', 'Invoice')
 
 @section('content')
-    @component('components.top-nav')@endcomponent
+    @component('admin.components.top-nav')@endcomponent
 
     <main style="margin-top: 76px;min-height: calc(100vh - 86px - 78px);height: 100%" class="bg-theme-alt">
         <section id="checkout" class="py-5">
@@ -15,14 +15,25 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <p>
-                            <strong>Transaction Reference:</strong> {{ strtoupper($order->transaction_reference) }}
-                            <br/>
-                            <strong>Total:</strong> &#8358; {{ number_format($order->amount, 2) }}
-                            <br/>
-                            <strong>Date:</strong> {{ Carbon\Carbon::parse($order->created_at)->format('D, M d, Y') }}
-                            <br/>
-                        </p>
+                        <div class="row my-4">
+                            <div class="col-md-6">
+                                <strong>Transaction Reference:</strong> {{ strtoupper($order->transaction_reference) }}
+                                <br/>
+                                <strong>Total:</strong> &#8358; {{ number_format($order->amount, 2) }}
+                                <br/>
+                                <strong>Date:</strong> {{ Carbon\Carbon::parse($order->created_at)->format('D, M d, Y') }}
+                                <br/>
+                                <strong>Time:</strong> {{ Carbon\Carbon::parse($order->created_at)->format('h:m a') }}
+                            </div>
+
+                            <div class="col-md-6">
+                                <strong>Name:</strong> {{ $order->user->name }}
+                                <br/>
+                                <strong>Email:</strong> {{ $order->user->email }}
+                                <br/>
+                                <strong>Phone:</strong> {{ $order->user->phone }}
+                            </div>
+                        </div>
 
                         <table class="table font-weight-bold">
                             <thead class="bg-dark text-light text-nowrap">
@@ -47,7 +58,6 @@
                                     Amount
                                 </th>
 
-                                <th></th>
                             </tr>
                             </thead>
 
@@ -74,13 +84,6 @@
                                     <td>
                                         &#8358; {{ number_format($house->amount) }}
                                     </td>
-
-                                    <td class="text-right">
-                                        <button data-toggle="modal" data-target="#view-house-{{ $house->id }}"
-                                                class="btn btn-info btn-sm py-2 px-3">
-                                            View
-                                        </button>
-                                    </td>
                                 </tr>
                             @endforeach
                         </table>
@@ -88,21 +91,6 @@
                 </div>
             </div>
         </section>
-
-        @foreach($order->houses as $house)
-            <div class="modal fade" role="dialog" id="view-house-{{ $house->id }}">
-                <div class="modal-dialog modal-lg modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            @include('pages.house.partials._show')
-                        </div>
-                        <div class="modal-footer text-right">
-                            <button class="btn btn-dark btn-sm" data-dismiss="modal">Ok</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
     </main>
 
     @component('components.footer')@endcomponent

@@ -77,4 +77,9 @@ Route::prefix('admin')->group(function () {
     // ORDERS
     Route::get('orders', 'Admin\OrderController@index')
         ->name('admin.orders');
+
+    Route::get('order/invoice/{id}', 'Admin\OrderController@show')
+        ->name('admin.invoice');
+
+    Route::redirect('', 'admin/houses');
 });

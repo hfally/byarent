@@ -128,25 +128,52 @@
             </div>
         </section>
 
+        {{--BLOCKQUOTE--}}
+        <section id="blockquote" class="my-5 py-3 bg-light">
+            <div class="container">
+                <blockquote class="blockquote text-muted text-center">
+                    <i class="fa fa-quote-left text-muted"></i>
+                    <p class="my-2 font-italic">
+                        The ache for home lives in all of us. The safe place where we can go as we are and not be
+                        questioned.
+                    </p>
+                    <footer class="blockquote-footer mb-2">
+                        Maya Angelou in <cite title="Source Title">stageoflife.com</cite>
+                    </footer>
+                    <i class="fa fa-quote-right text-muted"></i>
+                </blockquote>
+            </div>
+        </section>
+
         <section id="agents" class="my-5">
             <div class="container">
-                <hr/>
-                <h2>
-                    About
-                </h2>
-                <hr/>
+                <div class="row">
+                    <div class="col-md-6 border-right d-flex align-items-center">
+                        <div class="text-center text-muted">
+                            <h2 style="font-size: 50pt">
+                                <i class="fa fa-lock"></i>
+                            </h2>
 
-                <p class="lead">
-                    Byarent plays a dynamic, diversified and growing role in the
-                    Nigerian real estate market. We provide our clients with customized solutions to their real estate
-                    needs.
-                </p>
+                            <strong class="form-text font-italic mb-2 text-dark">
+                                safe & secure
+                            </strong>
 
-                <p class="lead">
-                    We use creative, flexible and cost saving approach to housing development and delivery. Our team
-                    draws on an in-depth understanding of the real estate sector, gained through years of practical
-                    involvement and experience in the industry.
-                </p>
+                            Byarent plays a dynamic, diversified and growing role in the
+                            Nigerian real estate market. We provide our clients with customized solutions to their real estate
+                            needs.
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 text-center">
+                        <img src="{{ 'img/mobile2.png' }}" width="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-0" style="background: #000">
+            <div class="container pb-0">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/-aacu_wNwLs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </section>
     </main>

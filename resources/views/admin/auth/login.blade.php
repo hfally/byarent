@@ -4,7 +4,7 @@
 
 @section('content')
     <main style="height: 100vh" class="d-flex justify-content-center align-items-center bg-theme">
-        <div class="container justify-content-center d-flex">
+        <div class="container flex-column align-items-center justify-content-center d-flex">
             <div class="card p-3" style="max-width: 420px; width: 100%">
                 <div class="card-body">
 
@@ -70,6 +70,12 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            
+            <div class="my-3">
+                <a href="{{ route('home') }}" class="text-light no-underline">
+                    <i class="fa fa-arrow-left"></i>&emsp;Back to website
+                </a>
             </div>
         </div>
     </main>

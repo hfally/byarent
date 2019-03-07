@@ -6,7 +6,9 @@
     @component('admin.components.top-nav')@endcomponent
 
     <main style="margin-top: 150px;min-height: calc(100vh - 88px - 150px)">
+        <div>
 
+        </div>
     </main>
 
     @component('components.footer')@endcomponent
