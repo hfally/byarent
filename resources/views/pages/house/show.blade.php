@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Welcome')
+@section('title', "House $house->number")
 
 @section('content')
     @component('components.top-nav')@endcomponent
@@ -10,24 +10,23 @@
             <div class="container">
                 <hr/>
                 <h2>
-                    5 Bedroom-Bungalow at Ikeja, Lagos
+                    {{ $house->no_of_room }} Bedroom-{{ ucwords($house->category->name) }} at {{ $house->city }},
+                    {{ $house->state }}
                 </h2>
                 <hr/>
 
                 @include('pages.house.partials.slider')
 
                 <div class="bg-dark my-2 p-2 text-light text-center">
-                    <i class="fa fa-home"></i> Residential
+                    <i class="fab fa-fort-awesome" aria-hidden="true"></i> {{ ucwords($house->category->name) }}
                     &emsp;|&emsp;
-                    <i class="fab fa-fort-awesome" aria-hidden="true"></i> Bungalow
+                    <i class="fa fa-bed"></i> {{ $house->no_of_room }} Rooms
                     &emsp;|&emsp;
-                    <i class="fa fa-bed"></i> 5 Rooms
+                    <i class="fa fa-shower"></i> {{ $house->no_of_bath }} Bath
                     &emsp;|&emsp;
-                    <i class="fa fa-shower"></i> 2 Bath
+                    <i class="fa fa-map"></i> {{ $house->size }}
                     &emsp;|&emsp;
-                    <i class="fa fa-map"></i> 43ft/23ft
-                    &emsp;|&emsp;
-                    <i class="fa fa-clock"></i> Posted 1 month ago
+                    <i class="fa fa-clock"></i> Posted {{ $house->posted_at }}
                 </div>
 
                 <div class="property-section bg-light my-2">
@@ -35,34 +34,34 @@
                         <div class="col-md-6 border-right-dotted">
                             <div class="p-3">
                                 <h3><i class="fa fa-map-pin text-danger"></i> Location</h3>
-                                <strong>Street:</strong> 9 Abebi
+                                <strong>Street:</strong> {{ ucwords($house->street) }}
                                 <br/>
-                                <strong>Local Government Area:</strong> Kosofe
+                                <strong>Local Government Area:</strong> {{ ucwords($house->lga) }}
                                 <br/>
-                                <strong>City:</strong> Ikeja
+                                <strong>City:</strong> {{ ucwords($house->city) }}
                                 <br/>
-                                <strong>State:</strong> Lagos
+                                <strong>State:</strong> {{ $house->state }}
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="p-3">
-                                <h3 class="font-italic text-theme-alt font-weight-bold">&#8358; 45,000,000</h3>
+                                <h3 class="font-italic text-theme-alt font-weight-bold">
+                                    &#8358; {{ number_format($house->amount) }}</h3>
 
                                 <h3>Description</h3>
 
-                                Located in the sub-haran part of the city.
+                                {!! $house->description !!}
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="mt-4 text-right">
-                    <button class="btn btn-dark">
-                        <i class="fa fa-cart-plus"></i>
-                        Add to cart
-                    </button>
-                </div>
+                @if (!$house->order->count())
+                    <div class="mt-4 text-right">
+                        @include('partials.cart-button')
+                    </div>
+                @endif
             </div>
         </section>
     </main>

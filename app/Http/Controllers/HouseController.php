@@ -7,16 +7,23 @@ use Illuminate\Http\Request;
 
 class HouseController extends Controller
 {
-    public function index (Request $request)
+    public function index(Request $request)
     {
-        $houses = House::latest()->paginate(20);
+        $houses = House::available()->latest()->paginate(20);
 
         return view('pages.house.index', compact('houses'));
     }
 
-    public function show ($pid)
+    public function show($id)
     {
-        $house = $pid;
+        $id = decrypt($id);
+
+        $house = House::find($id);
+
+        if (!$house) {
+            abort(404);
+        }
+
         return view('pages.house.show', compact('house'));
     }
 }

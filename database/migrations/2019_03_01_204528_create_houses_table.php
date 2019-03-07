@@ -16,8 +16,8 @@ class CreateHousesTable extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('category_id');
-            $table->string('type');
-            $table->string('size');
+            $table->string('breadth');
+            $table->string('length');
             $table->text('description');
             $table->string('country');
             $table->string('state');

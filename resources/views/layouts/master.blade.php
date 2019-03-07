@@ -20,6 +20,7 @@
     <!-- Plugin Css -->
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/checker.css') }}" rel="stylesheet" media="all">
 
     <!-- Custom Css -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
@@ -51,11 +52,21 @@
 
 @yield('content')
 
+{{--FEEDBACK SECTION--}}
+@if(session('feedback'))
+    @component('components.' . session('feedback')['status'])
+        @slot('id', 'feedback-modal')
+        @slot('message', session('feedback')['message'])
+    @endcomponent
+@endif
+
 <!-- Scripts -->
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/loader.js') }}"></script>
 <script src="{{ asset('bootstrap/popper.min.js') }}"></script>
 <script src="{{ asset('bootstrap/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset('js/currency-formatter.js') }}"></script>
 
 <script>
     $.ajaxSetup({
@@ -63,7 +74,15 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
+    const cart = {!! session('cart') ? json_encode(session('cart')) : '[]' !!};
+    const route = {
+        updateCart: '{{ route('cart.update') }}'
+    };
 </script>
+
+{{--IMPORTS--}}
+<script src="{{ asset('js/cart.js') }}"></script>
 
 <script src="{{ asset('js/main.js') }}"></script>
 

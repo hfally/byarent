@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
@@ -12,6 +13,11 @@ class Order extends Model
 
     public function houses()
     {
-        return $this->hasManyThrough(House::class, HouseOrder::class);
+        return $this->belongsToMany(House::class);
+    }
+
+    public function getNumberAttribute()
+    {
+        return 'BR/OR/' . Carbon::parse($this->creted_at)->format('Y') . '/' . $this->id;
     }
 }

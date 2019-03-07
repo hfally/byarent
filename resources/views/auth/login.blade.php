@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
+@section('title', 'Login')
+
 @section('content')
     <main style="height: 100vh" class="d-flex justify-content-center align-items-center bg-theme-alt">
         <div class="container justify-content-center d-flex">
@@ -26,8 +28,8 @@
 
                             @if ($errors->has('email'))
                                 <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
                             @endif
                         </div>
 

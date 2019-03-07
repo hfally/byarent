@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Welcome')
+@section('title', 'Orders')
 
 @section('content')
     @component('components.top-nav')@endcomponent
@@ -11,82 +11,75 @@
                 <div class="card">
                     <div class="card-header">
                         <h5 class="card-title">
-                            Checkout
+                            Orders
                         </h5>
                     </div>
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-7 border-right">
+                        <table class="table font-weight-bold">
+                            <thead class="bg-dark text-light text-nowrap">
+                            <tr>
+                                <th>
+                                    Order No
+                                </th>
 
-                                <table class="table font-weight-bold">
-                                    <tr>
-                                        <td width="150" class="border-top-0">
-                                            <a href="" target="_blank">
-                                                <img src="{{ asset('img/houses/item3.jpg') }}" class="img-fluid shadow">
-                                            </a>
-                                        </td>
-                                        <td class="text-right align-middle border-top-0">
-                                            &#8358; 43,000,000
+                                <th>
+                                    Reference
+                                </th>
 
-                                            <small class="form-text">
-                                                5br Bungalow. Ikeja, Lagos
-                                            </small>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td width="150">
-                                            <a href="" target="_blank">
-                                                <img src="{{ asset('img/houses/item4.jpg') }}" class="img-fluid shadow">
-                                            </a>
-                                        </td>
-                                        <td class="text-right align-middle">
-                                            &#8358; 40,000,000
+                                <th>
+                                    Amount
+                                </th>
 
-                                            <small class="form-text">
-                                                5br Bungalow. Ikeja, Lagos
-                                            </small>
-                                        </td>
-                                    </tr>
-                                </table>
+                                <th>
+                                    Date
+                                </th>
 
-                            </div>
+                                <th></th>
+                            </tr>
+                            </thead>
 
-                            <div class="col-sm-5">
-                                <table class="table table-borderless">
-                                    <tr>
-                                        <td>
-                                            Sub-Total:
-                                        </td>
+                            @foreach($orders as $order)
+                                <tr>
+                                    <td class="align-middle">
+                                        {{ $order->number }}
+                                    </td>
 
-                                        <td class="text-right">
-                                            &#8358; 83,000,000.00
-                                        </td>
-                                    </tr>
+                                    <td class="align-middle">
+                                        {{ strtoupper($order->transaction_reference) }}
+                                    </td>
 
-                                    <tr>
-                                        <td>
-                                            VAT:
-                                        </td>
-                                        <td class="text-right">
-                                            &#8358; 5,000.00
-                                        </td>
-                                    </tr>
+                                    <td class="align-middle">
+                                        &#8358; {{ number_format($order->amount) }}
+                                    </td>
 
-                                    <tr class="font-weight-bold">
-                                        <td>
-                                            Total:
-                                        </td>
-                                        <td class="text-right">
-                                            &#8358; 83,005,000.00
-                                        </td>
-                                    </tr>
-                                </table>
+                                    <td class="align-middle">
+                                        {{ Carbon\Carbon::parse($order->created_at)->format('D, M d, Y') }}
+                                    </td>
 
-                                <button class="btn btn-block btn-success mt-5">
-                                    Proceed Checkout
-                                </button>
-                            </div>
-                        </div>
+                                    <td class="text-right align-middle">
+                                        <a href="{{ route('invoice', encrypt($order->id)) }}"
+                                           class="btn btn-info btn-sm py-2 px-3">
+                                            View
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+
+                            @if($orders->count() < 1)
+                                <tr>
+                                    <td class="text-center text-muted" colspan="5">
+                                        <h3>Your have no order!</h3>
+                                        <br/>
+                                        Proceed to
+                                        <a href="{{ route('houses') }}"
+                                           class="btn btn-success animated pulse infinite no-animation-hover mx-2">HOUSES</a> to add
+                                        to your cart and make an order.
+                                        <br/>
+                                        Thanks!
+                                    </td>
+                                </tr>
+                            @endif
+                        </table>
                     </div>
                 </div>
             </div>
