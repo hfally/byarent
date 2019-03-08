@@ -87,16 +87,6 @@
                                         {{ "{$house->breadth}ft/{$house->length}ft | {$house->no_of_room}br " . ucwords($house->category->name) }}
                                     </p>
 
-                                    <small class="text-center form-text">
-                                        <a class="text-muted pointer" data-toggle="collapse" data-target="#collapse-{{ $house->id }}" role="button" aria-expanded="false" aria-controls="collapseExample">-- Description --</a>
-                                    </small>
-
-                                    <div class="collapse" id="collapse-{{ $house->id }}">
-                                        <div class="card card-body">
-                                            {{ $house->description }}
-                                        </div>
-                                    </div>
-
                                     <small class="text-muted form-text text-center">
                                         <i class="fa fa-clock"></i>
                                         Posted {{ Carbon\Carbon::parse($house->created_at)->diffForHumans() }}
