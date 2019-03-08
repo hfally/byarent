@@ -92,7 +92,7 @@
                    href="{{ route('checkout') }}">
                     <small class="fa-stack fa-1x position-relative">
                         <span class="cart-count cart-badge animated">{{ session('cart') ? count(session('cart')) : null }}</span>
-                        <i class="fa fa-shopping-cart fa-stack-2x text-theme"></i>
+                        <i class="fas fa-shopping-cart fa-stack-2x text-theme"></i>
                     </small>
                     <br/>
                     <small class="font-weight-bold form-text">Cart</small>
