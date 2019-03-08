@@ -17,8 +17,15 @@ const Cart = {};
  */
 Cart.updateCount = function () {
     let count = cart.length > 0 ? cart.length : '';
+    let countField = $('.cart-count');
 
-    $('.cart-count').text(count);
+    countField.text(count).animate({
+        fontSize: '1.5rem'
+    }, 100, function () {
+        $(this).animate({
+            fontSize: '1rem'
+        }, 100)
+    });
 };
 
 Cart.updateBackend = function () {

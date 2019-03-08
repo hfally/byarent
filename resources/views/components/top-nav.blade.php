@@ -35,17 +35,6 @@
                 </li>
 
                 @if(!auth('admin')->check())
-                    <li class="nav-item">
-                        <a class="nav-link text-dark {{ active('checkout') ? 'active' : '' }}"
-                           href="{{ route('checkout') }}">
-                        <span class="fa-stack fa-1x position-relative">
-                          <span class="cart-count cart-badge">{{ session('cart') ? count(session('cart')) : null }}</span>
-                          <i class="fa fa-shopping-cart fa-stack-2x"></i>
-                        </span>
-                            <span class="d-lg-none">Cart</span>
-                        </a>
-                    </li>
-
                     @if(auth()->check())
                         <li class="nav-item  mr-3">
                             <a class="nav-link {{ active('orders') ? 'active' : '' }}"
@@ -97,6 +86,18 @@
                 @endif
 
             </ul>
+
+            <div class="nav-item text-center">
+                <a class="nav-link text-dark {{ active('checkout') ? 'active' : '' }}"
+                   href="{{ route('checkout') }}">
+                    <small class="fa-stack fa-1x position-relative">
+                        <span class="cart-count cart-badge animated">{{ session('cart') ? count(session('cart')) : null }}</span>
+                        <i class="fa fa-shopping-cart fa-stack-2x text-theme"></i>
+                    </small>
+                    <br/>
+                    <small class="font-weight-bold form-text">Cart</small>
+                </a>
+            </div>
         </div>
     </div>
 </nav>

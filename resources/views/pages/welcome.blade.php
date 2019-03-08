@@ -87,6 +87,10 @@
                                         {{ "{$house->breadth}ft/{$house->length}ft | {$house->no_of_room}br " . ucwords($house->category->name) }}
                                     </p>
 
+                                    <p class="text-center">
+                                        <a href="">-- Show More --</a>
+                                    </p>
+
                                     <small class="text-muted form-text text-center">
                                         <i class="fa fa-clock"></i>
                                         Posted {{ Carbon\Carbon::parse($house->created_at)->diffForHumans() }}
